@@ -1,0 +1,13 @@
+name = "Baie"
+description = "A theme for zola"
+tags = []
+license = "MIT"
+homepage = "https://github.com/Wtoll/Baie"
+min_version = "0.4.0"
+demo = ""
+
+[extra]
+
+[author]
+name = "Will Toll"
+homepage = "https://wtoll.com/"
