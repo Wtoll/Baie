@@ -1,10 +1,10 @@
 name = "Baie"
-description = "A theme for zola"
+description = "A grounded theme for Zola"
 tags = []
 license = "MIT"
 homepage = "https://github.com/Wtoll/Baie"
 min_version = "0.4.0"
-demo = ""
+demo = "https://wtoll.github.io/baie"
 
 [extra]
 
