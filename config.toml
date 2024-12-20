@@ -1,8 +1,19 @@
+title = "Baie"
 base_url = "https://github.com/Wtoll/Baie"
 compile_sass = false
 build_search_index = false
 
 [markdown]
 highlight_code = true
+highlight_theme = "css"
+render_emoji = true
+smart_punctuation = true
+bottom_footnotes = true
 
 [extra]
+menu = [
+    { label = "Home", path = "/", side = "left" },
+    { label = "About", path = "/about" },
+    { label = "Posts", path = "/posts" }
+]
+copyright = "Copyright &copy; 2024 Will Toll"
