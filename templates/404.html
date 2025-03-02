@@ -1,7 +1,13 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block title %}404 Page Not Found{% endblock %}
 
 {% block main %}
-    <div class="title">404</div>
+    <div id="fourohfour">
+        <div>
+            <div class="title">404</div>
+            <p>Page not found</p>
+            <a class="button" href="{{ get_url(path='/', trailing_slash=false) | safe }}">Return Home</a>
+        </div>
+    </div>
 {% endblock %}

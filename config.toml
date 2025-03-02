@@ -11,9 +11,29 @@ smart_punctuation = true
 bottom_footnotes = true
 
 [extra]
-menu = [
-    { label = "Home", path = "/", side = "left" },
-    { label = "About", path = "/about" },
-    { label = "Posts", path = "/posts" }
-]
 copyright = "Copyright &copy; 2024 Will Toll"
+contact_form = "https://formspree.io/f/{form_id}"
+
+[extra.splash]
+title = "Hi!"
+body = "This is a blurb."
+
+[extra.profile]
+name = "Name"
+picture = "/profile.png"
+title = "Job Title"
+description = "Phasellus scelerisque augue aenean feugiat iaculis. Donec maecenas nam taciti nulla; amet est inceptos natoque. Netus quisque elit litora at maximus pulvinar. Nullam blandit lectus sociosqu; sit duis integer elementum velit elit. Nec tempor ad erat habitant mus blandit netus luctus. Libero vel vel enim turpis tempor facilisi pulvinar laoreet. Molestie bibendum turpis, interdum fames tristique taciti."
+
+[[extra.menu]]
+label = "Home"
+path = "/"
+side = "left"
+
+[[extra.menu]]
+label = "About"
+path = "/#profile"
+
+[[extra.menu]]
+label = "Posts"
+path = "/posts"
+

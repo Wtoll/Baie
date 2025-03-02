@@ -1,41 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Home{% endblock %}{% if config.title %} | {{ config.title }}{% endif %}</title>
-        <link rel="stylesheet" href="{{ get_url(path='css/normalize.css', trailing_slash=false) | safe }}">
-        {% if config.markdown.highlight_code and config.markdown.highlight_theme == "css" %}
-            <link rel="stylesheet" type="text/css" href="{{ get_url(path='css/smart-highlight-theme.css', trailing_slash=false) | safe }}" />
-        {% endif %}
-        {% block css %}
-            <link rel="stylesheet" href="{{ get_url(path='css/main.css', trailing_slash=false) | safe }}">
-        {% endblock css %}
-        {% block head %}
-        {% endblock head %}
-    </head>
-    <body>
-        <header>
-            {% block header %}
-                <nav>
-                    <menu>
-                        {% for link in config.extra.menu %}
-                            <li {% if link.side %}class="{{ link.side }}"{% endif %}><a href="{{ get_url(path=link.path, trailing_slash=false) | safe }}">{{ link.label }}</a></li>
-                        {% endfor %}
-                    </menu>
-                </nav>
-            {% endblock %}
-        </header>
-        <main>
-            {% block main %}
-            {% endblock %}
-        </main>
-        <footer>
-            {% block footer %}
-                {% if config.extra.copyright %}
-                    <div class="copyright">{{ config.extra.copyright | safe }}</div>
-                {% endif %}
-            {% endblock %}
-        </footer>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+    {% if config.extra.splash %}
+        <div id="splash">
+            <div>
+                <h1>{{ config.extra.splash.title }}</h1>
+                <p>{{ config.extra.splash.body }}</p>
+            </div>
+        </div>
+    {% endif %}
+    {% if config.extra.profile %}
+        <div id="profile">
+            <div class="sidebar">
+                {% if config.extra.profile.picture %}<img src="{{ get_url(path=config.extra.profile.picture, trailing_slash=false) | safe }}" />{% endif %}
+                {% if config.extra.profile.name %}<p>{{ config.extra.profile.name }}</p>{% endif %}
+                {% if config.extra.profile.title %}<p>{{ config.extra.profile.title }}</p>{% endif %}
+            </div>
+            <div>
+                <h1>About Me</h1>
+                {% if config.extra.profile.description %}<p>{{ config.extra.profile.description }}</p>{% endif %}
+            </div>
+        </div>
+    {% endif %}
+    {% if config.extra.contact_form %}
+        <div id="contact_form">
+            <h1>Contact</h1>
+            <form action="{{ config.extra.contact_form }}" method="post">
+                <input name="Name" id="name" type="text" placeholder="Name" autocomplete="name">
+                <input name="Email" id="email" type="email" placeholder="Email">
+                <textarea name="Message" id="message" placeholder="Message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

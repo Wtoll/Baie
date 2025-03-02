@@ -22,11 +22,12 @@
     --code-background: var(--layered);
 }
 
-
+div, h1, h2, h3, h4, h5, h6, p, li, button, a, label, input, textarea {
+    font-family: "Noto Sans", sans-serif;
+}
 
 div, h1, h2, h3, h4, h5, h6, p, li {
     color: var(--text);
-    font-family: sans-serif;
 }
 
 a {
@@ -157,9 +158,42 @@ td, th {
     padding: 0.25em;
 }
 
+/* Button */
+button, a.button {
+    padding: 0.5em 1.5em;
+    border: none;
+    border-radius: 0.25em;
+    background: var(--layered);
+    transition: background 0.25s;
+}
 
+button:hover, a.button:hover {
+    background: var(--layered-pop);
+    cursor: pointer;
+}
 
+a.button {
+    text-decoration: none;
+    color: var(--text);
+    display: inline-block;
+}
 
+/* Text Inputs */
+input[type="text"], input[type="email"] {
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+/* Text Area */
+textarea {
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    overflow-y: visible;
+}
 
 
 
@@ -193,6 +227,8 @@ body > header {
 
 body > main {
     grid-area: main;
+    display: grid;
+    row-gap: 50px;
 }
 
 body > footer {
@@ -206,6 +242,15 @@ body > header, body > footer {
     padding-bottom: 0.5em;
 }
 
+body > main > div {
+    min-height: 300px;
+    display: grid;
+    align-items: center;
+}
+
+body > main > div > h1 {
+    margin-top: 0;
+}
 
 
 
@@ -234,4 +279,69 @@ header > nav > menu > li > a {
     display: block;
     padding: 5px 10px;
     color: var(--text);
+}
+
+
+
+
+
+
+/* Splash styles */
+div#splash p {
+    font-size: 1.5em;
+}
+
+/* Profile styles */
+div#profile {
+    display: grid;
+    grid-template-columns: min-content auto;
+    column-gap: 20px;
+}
+
+div#profile img {
+    width: 150px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+}
+
+div#profile div.sidebar p {
+    text-align: center;
+    margin: 0;
+    text-wrap: wrap;
+}
+
+
+/* Contact form styles */
+div#contact_form form {
+    display: flex;
+    flex-direction: column;
+}
+
+div#contact_form form * {
+    margin: 5px 0;
+}
+
+div#contact_form textarea {
+    resize: none;
+    min-height: 10em;
+}
+
+div#contact_form button[type="submit"] {
+    width: min-content;
+}
+
+
+
+/* 404 Styles */
+div#fourohfour * {
+    text-align: center;
+    margin: 0;
+}
+
+div#fourohfour div.title {
+    font-size: 8em;
+}
+
+div#fourohfour a.button {
+    margin-top: 5em;
 }
